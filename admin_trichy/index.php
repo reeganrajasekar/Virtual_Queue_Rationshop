@@ -23,9 +23,9 @@
     }, 5000)
   </script>
   <div  data-aos="zoom-in" class="container" style="margin-top:120px;margin-bottom:100px;width:500px;max-width:100vw;background-color: white;padding:30px 0px;border-radius: 30px;box-shadow: 2px 2px 8px #ccc;">
-    <h1 style="text-align: center;color:#2b74e2"><b>Admin - Thanjavur</b></h1>
+    <h1 style="text-align: center;color:#2b74e2"><b>Admin - Trichy</b></h1>
     <br>
-    <form style="margin: 0 20%" method="POST" action="/admin/login.php">
+    <form style="margin: 0 20%" method="POST" action="/admin_trichy/login.php">
       <div class="form-outline mb-4">
         <label class="form-label" for="form2Example1">Email :</label>
         <input type="email" name="email" class="form-control" required/>

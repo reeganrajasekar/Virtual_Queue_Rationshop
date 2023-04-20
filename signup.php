@@ -27,7 +27,14 @@
                     <div class="card" style="border-radius: 1rem;background-color:#f5f5f5;">
                         <form onsubmit="document.getElementById('loader').style.display='block'" action="/register.php" method="POST" class="card-body p-4 text-center">
                             <h2 class="fw-bold mb-4 text-uppercase text-primary" style="font-weight:800">User Signup</h2>
-                            
+                            <div class="form-floating mb-3">
+                                <select name="center" class="form-control">
+                                    <option value="" selected disabled>Select center</option>
+                                    <option value="Thanjavur">Thanjavur</option>
+                                    <option value="Trichy">Trichy</option>
+                                </select>
+                                <label for="floatingInput">Center</label>
+                            </div>
                             <div class="form-floating mb-3">
                                 <input required type="text" name="name" class="form-control" id="floatingInput" placeholder="Name">
                                 <label for="floatingInput">Name</label>

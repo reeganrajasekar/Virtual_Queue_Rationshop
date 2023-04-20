@@ -15,6 +15,7 @@ if ($result->num_rows > 0) {
                 session_start(); 
             }
             $_SESSION["id"] = $row["id"];
+            $_SESSION["center"] = $row["center"];
             header("Location: /user/");
             die();
         } else {

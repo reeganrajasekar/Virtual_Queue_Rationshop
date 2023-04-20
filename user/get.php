@@ -8,8 +8,9 @@ if(!isset($_SESSION))
 }
 
 $uid = $_SESSION["id"];
+$center = $_SESSION["center"];
 
-$sql="INSERT INTO queue(uid,status) VALUE('$uid','Waiting List')";
+$sql="INSERT INTO queue(uid,status,center) VALUE('$uid','Waiting List','$center')";
 $conn->query($sql);
 header("Location: /user");
 die();

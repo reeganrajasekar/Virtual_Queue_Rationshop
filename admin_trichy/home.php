@@ -18,7 +18,7 @@
         </thead>
         <tbody>
         <?php
-            $result = $conn->query("SELECT * FROM queue WHERE status='Waiting List' AND center='Thanjavur' ORDER BY id ASC");
+            $result = $conn->query("SELECT * FROM queue WHERE status='Waiting List' AND center='Trichy' ORDER BY id ASC");
             if($result->num_rows > 0){
                 $i=0;
                 while($row = $result->fetch_assoc()){
@@ -32,7 +32,7 @@
                             <td><?php echo($row1["name"]) ?></td>
                             <td><?php echo($row["id"]) ?> <?php if($i==1){echo("(Current)");}?> <?php if($i==2){echo("(Next)");}?></td>
                             <td>
-                                <form action="/admin/action/update.php" method="post">
+                                <form action="/admin_trichy/action/update.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo($row["id"]) ?>">
                                     <center>
                                         <button class="btn btn-danger w-75">Change</button>
