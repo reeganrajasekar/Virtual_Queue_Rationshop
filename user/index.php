@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queue Home</title>
-    <meta http-equiv="refresh" content="20">
+    <meta http-equiv="refresh" content="10">
     <style>
         *{margin:0;padding:0;}
         html,body{width:100%;height:100%}
@@ -43,7 +43,7 @@
         </nav>
     <main style="width:100%;height:80%;display:flex;justify-content:center;align-items: center;">
         <section id="container" style="background-color:#f0f0f0;min-height:50%;width:40%;color:#2b74e2;display: flex;flex-direction:column;align-items: center;justify-content: center;border-radius: 10px;box-shadow: 0px 2px 6px #fff;">
-            <h1 style="color:green;font-size:30px" id="data">Free Queue</h1><br>
+            <h1 style="color:green;font-size:30px" class="mt-4" id="data">Free Queue</h1><br>
             <h3 style="color:gray;font-size:18px">Next : <span id="next">Free Queue</span></h3>
             <br><br><br>
             <?php
@@ -55,11 +55,11 @@
             $result = $conn->query("SELECT * FROM queue WHERE uid='$uid' AND status='Waiting List'");
             if($result->num_rows > 0){
             ?>
-            <h1>Your Token No</h1>
+            <h1 style="font-size:22px"> Your Token No</h1>
             <?php
                 while($row = $result->fetch_assoc()){
                     ?>
-                    <div style="margin-top:10px;border:1px solid #2b74e2;padding:10px;font-size:30px;font-weight:900;border-radius:10px">
+                    <div class="mb-4" style="margin-top:10px;border:1px solid #2b74e2;padding:10px;font-size:30px;font-weight:900;border-radius:10px">
                         <input type="hidden" id="token" value="<?php echo($row["id"]) ?>">
                         <?php echo($row["id"]) ?>
                     </div>
@@ -75,6 +75,8 @@
             ?>
         </section>
     </main>
+    <div id="tri" style="display:none;position:fixed;bottom:20px;right:20px;font-size:22px" class="alart bg-danger text-white p-3 border rounded">Prepare! You are close</div>
+    <div id="su" style="display:none;position:fixed;bottom:20px;right:20px;font-size:22px" class="alart bg-primary text-white p-3 border rounded">You are in the First</div>
     <script>
         data = document.getElementById("data")
         next = document.getElementById("next")
@@ -86,7 +88,12 @@
                         data.innerHTML = output[0]
                         token = document.getElementById("token").value
                         if(token==parseInt(output[0])+1 || token==parseInt(output[0])+2 || token==parseInt(output[0])+3 || token==parseInt(output[0])+4 || token==parseInt(output[0])+5){
-                            alert("Prepare You are in near Queue!")
+                            document.getElementById("tri").style.display="block"
+                        }else if(token==parseInt(output[0])){
+                            document.getElementById("su").style.display="block"
+                        }else{
+                            document.getElementById("su").style.display="none"
+                            document.getElementById("tri").style.display="none"
                         }
                     }else{
                         data.innerHTML="Free Queue"
@@ -109,8 +116,10 @@
                     if(output[0]){
                         data.innerHTML = output[0]
                         token = document.getElementById("token").value
-                        if(token==output[0]-1){
-                            alert(token)
+                        if(token==parseInt(output[0])+1 || token==parseInt(output[0])+2 || token==parseInt(output[0])+3 || token==parseInt(output[0])+4 || token==parseInt(output[0])+5){
+                            document.getElementById("tri").style.display="block"
+                        }else{
+                            document.getElementById("tri").style.display="none"
                         }
                     }else{
                         data.innerHTML="Free Queue"
