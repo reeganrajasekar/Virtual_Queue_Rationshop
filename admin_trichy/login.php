@@ -3,6 +3,7 @@ session_start();
 if ($_POST["email"]=="admin@gmail.com") {
     if ($_POST["password"]=="admin") {
         $_SESSION["lock"] = "xiny9387tdpq##*&B98oyo8B@*O&^PB^B$";
+        $_SESSION["center"] = "Trichy";
         header("Location: /admin_trichy/home.php");
         die();
     } else {

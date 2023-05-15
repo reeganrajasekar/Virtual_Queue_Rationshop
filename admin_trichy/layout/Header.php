@@ -21,9 +21,11 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-                        <a class="nav-link <?php if($_SERVER['PHP_SELF'] == '/admin_trichy/home.php'){ echo 'active'; } ?>" aria-current="page" href="/admin/home.php">Home</a>
+                        <a class="nav-link <?php if($_SERVER['PHP_SELF'] == '/admin_trichy/home.php'){ echo 'active'; } ?>" aria-current="page" href="/admin_trichy/home.php">Home</a>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a class="nav-link <?php if($_SERVER['PHP_SELF'] == '/admin_trichy/product.php'){ echo 'active'; } ?>" aria-current="page" href="/admin_trichy/product.php">Product</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="return confirm('Do you want to Logout?')" href="/admin_trichy/logout.php">Logout</a>
                     </li>

@@ -25,6 +25,10 @@
                     </li>
                     
                     <li class="nav-item">
+                        <a class="nav-link <?php if($_SERVER['PHP_SELF'] == '/admin/product.php'){ echo 'active'; } ?>" aria-current="page" href="/admin/product.php">Product</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" onclick="return confirm('Do you want to Logout?')" href="/admin/logout.php">Logout</a>
                     </li>
                 </ul>

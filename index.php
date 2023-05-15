@@ -11,20 +11,45 @@
         body, html {
             height:100%
         }
+        a.active {
+        color: #2b74e2 !important;
+        font-weight: 700;
+        text-shadow: 1px 1px 1px #aaa;
+        }
     </style>
 </head>
-<body >
+<body style="background-image:url('/static/bg.jpg');background-position:center center;background-repeat:no-repeat;background-size:cover">
+    <nav class="navbar navbar-expand-lg sticky-top" style="background:white;box-shadow:1px 1px 2px #aaa;">
+            <div class="container">
+                <a class="navbar-brand" style="font-size:22px;font-weight:900;color:#2b74e2" href="">
+                    Smart Ration Shop
+                </a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">User</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="/admin">Admin-TNJ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="/admin_trichy">Admin-TRICHY</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
     <div id="loader" style="position:fixed;width:100%;height:100%;background-color:rgba(106, 17, 203, 1);z-index: 10000;top:0px;display: none;">
         <div class="spinner-border" style="color:#fff;position:fixed;top:48%;left:49%;" role="status">
           <span class="sr-only"></span>
         </div>
     </div>
 
-    <section class="gradient-custom h-100">
-        <div class="container py-1 h-100">
+        <div class="container py-1 mt-5">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card" style="border-radius: 1rem;background-color:#f5f5f5;">
+                    <div class="card" style="border-radius: 1rem;">
                         <form onsubmit="document.getElementById('loader').style.display='block'" action="/login.php" method="POST" class="card-body p-4 text-center">
                             <h2 class="fw-bold mb-4 text-uppercase text-primary" style="font-weight:800">User Login</h2>
                             <div class="form-floating mb-3">
@@ -45,7 +70,6 @@
                 </div>
             </div>
         </div>
-    </section>
     
     <style>
         .gradient-custom {
